@@ -2,10 +2,10 @@
 /**
  * @author Plitka Alexander
  */
-include 'updateDuplicates.php';
-include 'duplicateChains.php';
-include 'reader.php';
-include 'csvReader.php';
+include 'classes/updateDuplicates.php';
+include 'classes/duplicateChains.php';
+include 'classes/reader.php';
+include 'classes/csvReader.php';
 
 $csvReader = new CsvReader('input.csv');
 $updateDuplicates = new UpdateDuplicates($csvReader);
