@@ -36,7 +36,7 @@ class DuplicateChains
                 }
             }
         }
-        
+
         return $duplicates;
     }
 
@@ -49,10 +49,9 @@ class DuplicateChains
         foreach ($duplicateChains as $duplicateChain) {
             $flipChain = array_flip($duplicateChain);
             foreach ($flipChain as $key => $value)
-                $result[$key - 1] = min($duplicateChain);
+                $result[$key] = min($duplicateChain);
         }
-        ksort($result);
-        
+
         return $result;
     }
 }

@@ -35,7 +35,9 @@ class UpdateDuplicates
         }
 
         $parentIds = $duplicateChains->getParentIds($this->duplicates);
-        $data["PARENT_ID"] = $parentIds;
+        foreach ($data["ID"] as $key => $id) {
+            $data["PARENT_ID"][$key] = $parentIds[$id];
+        }
 
         $this->csvReader->saveToFile($data);
     }
